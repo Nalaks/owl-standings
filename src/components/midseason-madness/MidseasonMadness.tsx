@@ -1,9 +1,12 @@
 import React, { FC } from 'react';
+import Layout from '../../layout/Layout';
 
 export const MidseasonMadness: FC = () => {
   return (
     <div>
-      <h1>MidseasonMadness</h1>
+      <Layout>
+        <h1>MidseasonMadness</h1>
+      </Layout>
     </div>
   );
 };
