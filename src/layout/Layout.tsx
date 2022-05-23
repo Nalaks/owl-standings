@@ -1,3 +1,4 @@
+import { Stack } from '@chakra-ui/react';
 import React, { FC } from 'react';
 import Footer from './footer/Footer';
 import Header from './header/Header';
@@ -8,11 +9,11 @@ type Props = {
 
 const Layout: FC<Props> = ({ children }) => {
   return (
-    <>
+    <Stack boxSize='full'>
       <Header />
       {children}
       <Footer />
-    </>
+    </Stack>
   );
 };
 

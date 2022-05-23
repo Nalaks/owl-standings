@@ -1,7 +1,6 @@
 import React, { FC } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import {
-  Home,
   RegularSeason,
   CountdownCup,
   KickoffClash,
@@ -13,8 +12,7 @@ const App: FC = () => {
   return (
     <Router>
       <Routes>
-        <Route path='/' element={<Home />}></Route>{' '}
-        <Route path='regular-season' element={<RegularSeason />}></Route>
+        <Route path='/' element={<RegularSeason />}></Route>{' '}
         <Route path='kickoff-clash' element={<KickoffClash />}></Route>
         <Route path='midseason-madness' element={<MidseasonMadness />}></Route>
         <Route path='summer-showdown' element={<SummerShowdown />}></Route>

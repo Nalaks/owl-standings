@@ -1,43 +1,91 @@
 import React, { FC } from 'react';
 import {
-  Container,
-  HStack,
+  Stack,
   Icon,
+  Image,
   Link,
   Switch,
   useColorMode,
-  Wrap,
-  WrapItem
+  Box,
+  Divider
 } from '@chakra-ui/react';
 import { BsFillSunFill, BsFillMoonFill } from 'react-icons/bs';
 import { Link as RouterLink } from 'react-router-dom';
+import owlLogo from '../../assets/images/owl_logo.png';
 
 const Header: FC = () => {
   const { toggleColorMode } = useColorMode();
   return (
     <>
-      <Wrap spacing='10px' align='center' justify='center'>
-        <WrapItem>
+      <Stack
+        direction={['column', 'row']}
+        align='center'
+        justify='space-between'>
+        <Box>
           <Link as={RouterLink} to='/'>
-            Home
+            <Image boxSize='100px' src={owlLogo} alt='Overwatch League Logo' />
           </Link>
-        </WrapItem>
-        <WrapItem>
-          <Link as={RouterLink} to='/regular-season'>
-            Regular Season
-          </Link>
-        </WrapItem>
-        <WrapItem>
-          <Link as={RouterLink} to='/kickoff-clash'>
-            Kickoff Clash
-          </Link>
-        </WrapItem>
-        <WrapItem>
-          <Icon as={BsFillSunFill} w={4} h={4} />
-          <Switch onChange={toggleColorMode} />
-          <Icon as={BsFillMoonFill} w={4} h={4} />
-        </WrapItem>
-      </Wrap>
+        </Box>
+        <Stack spacing={8} direction={['column', 'row']}>
+          <Box>
+            <Link
+              as={RouterLink}
+              to='/'
+              _hover={{ textDecoration: 'none' }}
+              fontSize='xl'>
+              Regular Season
+            </Link>
+          </Box>
+          <Box>
+            <Link
+              as={RouterLink}
+              to='/kickoff-clash'
+              _hover={{ textDecoration: 'none' }}
+              fontSize='xl'>
+              Kickoff Clash
+            </Link>
+          </Box>
+          <Box>
+            <Link
+              as={RouterLink}
+              to='/midseason-madness'
+              _hover={{ textDecoration: 'none' }}
+              fontSize='xl'>
+              Midseason Madness
+            </Link>
+          </Box>
+          <Box>
+            <Link
+              as={RouterLink}
+              to='/summer-showdown'
+              _hover={{ textDecoration: 'none' }}
+              fontSize='xl'>
+              Summer Showdown
+            </Link>
+          </Box>
+          <Box>
+            <Link
+              as={RouterLink}
+              to='/countdown-cup'
+              _hover={{ textDecoration: 'none' }}
+              fontSize='xl'>
+              Countdown Cup
+            </Link>
+          </Box>
+        </Stack>
+        <Stack spacing={2} direction={['column', 'row']} paddingRight={4}>
+          <Box>
+            <Icon as={BsFillSunFill} w={6} h={6} />
+          </Box>
+          <Box>
+            <Switch onChange={toggleColorMode} />
+          </Box>
+          <Box>
+            <Icon as={BsFillMoonFill} w={6} h={6} />
+          </Box>
+        </Stack>
+      </Stack>
+      <Divider orientation='horizontal' />
     </>
   );
 };
