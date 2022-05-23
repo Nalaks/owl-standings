@@ -1,16 +1,15 @@
-import { Stack, Text, Link, Icon } from '@chakra-ui/react';
-import React, { FC } from 'react';
-import { BsSuitHeartFill } from 'react-icons/bs';
+import { Stack, Text, Link, Icon } from '@chakra-ui/react'
+import React, { FC } from 'react'
+import { BsSuitHeartFill } from 'react-icons/bs'
 
 const Footer: FC = () => {
   return (
     <>
       <Stack
-        direction={['column', 'row']}
+        direction='row'
         align='center'
         justify='center'
         bottom='0'
-        pos='fixed'
         width='100%'
         paddingTop={8}
         paddingBottom={8}>
@@ -34,7 +33,7 @@ const Footer: FC = () => {
         </Link>
       </Stack>
     </>
-  );
-};
+  )
+}
 
-export default Footer;
+export default Footer

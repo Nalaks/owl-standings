@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC } from 'react'
 import {
   Stack,
   Icon,
@@ -8,25 +8,26 @@ import {
   useColorMode,
   Box,
   Divider
-} from '@chakra-ui/react';
-import { BsFillSunFill, BsFillMoonFill } from 'react-icons/bs';
-import { Link as RouterLink } from 'react-router-dom';
-import owlLogo from '../../assets/images/owl_logo.png';
+} from '@chakra-ui/react'
+import { BsFillSunFill, BsFillMoonFill } from 'react-icons/bs'
+import { Link as RouterLink } from 'react-router-dom'
+import owlLogo from '../../assets/images/owl_logo.png'
 
 const Header: FC = () => {
-  const { toggleColorMode } = useColorMode();
+  const { toggleColorMode } = useColorMode()
   return (
     <>
       <Stack
-        direction={['column', 'row']}
+        direction={['column', 'column', 'column', 'row']}
         align='center'
-        justify='space-between'>
+        justify='space-between'
+        spacing={8}>
         <Box>
           <Link as={RouterLink} to='/'>
             <Image boxSize='100px' src={owlLogo} alt='Overwatch League Logo' />
           </Link>
         </Box>
-        <Stack spacing={8} direction={['column', 'row']}>
+        <Stack spacing={8} direction={['column', 'column', 'column', 'row']}>
           <Box>
             <Link
               as={RouterLink}
@@ -73,7 +74,7 @@ const Header: FC = () => {
             </Link>
           </Box>
         </Stack>
-        <Stack spacing={2} direction={['column', 'row']} paddingRight={4}>
+        <Stack spacing={2} direction='row' paddingRight={4}>
           <Box>
             <Icon as={BsFillSunFill} w={6} h={6} />
           </Box>
@@ -87,7 +88,7 @@ const Header: FC = () => {
       </Stack>
       <Divider orientation='horizontal' />
     </>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header
